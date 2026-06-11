@@ -3,44 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RRR Universe</title>
+<title>RRR Universe - Trading Community</title>
 
 <style>
+
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial;
 scroll-behavior:smooth;
 }
 
+/* BACKGROUND */
 body{
-background:linear-gradient(135deg,#000000,#0f172a,#111827);
+background: radial-gradient(circle at top, #0d1b2a, #000000, #05070d);
 color:white;
+overflow-x:hidden;
 }
 
-header{
+/* FLOATING GOLD LIGHTS */
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:300px;
+height:300px;
+background:gold;
+filter:blur(140px);
+opacity:0.15;
+z-index:-1;
+animation:float 6s infinite alternate;
+}
+
+body::before{
+top:10%;
+left:10%;
+}
+
+body::after{
+bottom:10%;
+right:10%;
+}
+
+@keyframes float{
+from{transform:translate(0,0);}
+to{transform:translate(80px,-80px);}
+}
+
+/* SHINING TEXT */
+.glow-text{
+color:gold;
+font-weight:bold;
+text-shadow:
+0 0 5px #ffd700,
+0 0 10px #ffd700,
+0 0 20px #ffcc00,
+0 0 40px #ffcc00;
+animation:shine 2.5s infinite alternate;
+}
+
+@keyframes shine{
+0%{filter:brightness(1);}
+100%{filter:brightness(1.8);}
+}
+
+/* NAVBAR */
+nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
-background:rgba(0,0,0,0.8);
-position:sticky;
+padding:15px 30px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+position:fixed;
+width:100%;
 top:0;
+z-index:1000;
+border-bottom:1px solid #222;
 }
 
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#FFD700;
+nav h2{
+color:gold;
 }
 
 nav a{
 color:white;
+margin:0 12px;
 text-decoration:none;
-margin-left:20px;
+font-size:14px;
 }
 
+nav a:hover{
+color:gold;
+}
+
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -52,169 +111,144 @@ padding:20px;
 }
 
 .hero h1{
-font-size:60px;
-color:#FFD700;
-margin-bottom:15px;
+font-size:55px;
 }
 
 .hero p{
-max-width:700px;
-font-size:18px;
-line-height:1.8;
+color:#aaa;
+margin-top:10px;
 }
 
+/* BUTTON */
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-background:#FFD700;
+margin-top:20px;
+padding:12px 25px;
+border:none;
+background:linear-gradient(90deg,gold,#ffcc00);
 color:black;
-text-decoration:none;
 font-weight:bold;
-border-radius:30px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
 }
 
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px gold;
+}
+
+/* SECTIONS */
 section{
-padding:80px 10%;
-}
-
-h2{
+padding:80px 20px;
 text-align:center;
-color:#FFD700;
-margin-bottom:30px;
-}
-
-.about{
-text-align:center;
-max-width:800px;
-margin:auto;
-line-height:1.8;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.08);
-padding:25px;
-border-radius:15px;
-backdrop-filter:blur(10px);
-}
-
-.contact{
-text-align:center;
-}
-
-footer{
-text-align:center;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,215,0,0.2);
+border-left:4px solid gold;
 padding:20px;
-background:black;
-margin-top:50px;
+margin:15px auto;
+width:80%;
+border-radius:12px;
+backdrop-filter:blur(10px);
+transition:0.3s;
 }
+
+.card:hover{
+transform:scale(1.03);
+box-shadow:0 0 20px gold;
+}
+
+/* CHART */
+.chart{
+width:90%;
+margin:auto;
+height:450px;
+border-radius:10px;
+overflow:hidden;
+}
+
+/* FOOTER */
+footer{
+padding:20px;
+text-align:center;
+color:#777;
+border-top:1px solid #222;
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">RRR Universe</div>
-
+<!-- NAVBAR -->
 <nav>
-<a href="#home">Home</a>
+<h2>RRR Universe</h2>
+<div>
 <a href="#about">About</a>
-<a href="#mission">Mission</a>
-<a href="#contact">Contact</a>
+<a href="#features">Features</a>
+<a href="#market">Market</a>
+<a href="#join">Join</a>
+</div>
 </nav>
-</header>
 
-<section class="hero" id="home">
+<!-- HERO -->
+<div class="hero">
+<h1 class="glow-text">RRR Universe</h1>
+<p class="glow-text">Elite Trading & Investment Community</p>
+<button class="btn" onclick="join()">Join Now</button>
+</div>
 
-<h1>RRR Universe</h1>
-
-<p>
-Learn • Trade • Grow Together
-</p>
-
-<p style="margin-top:15px;">
-A community built for new traders who want to learn,
-connect, share ideas and grow together in the financial markets.
-</p>
-
-<a class="btn"
-href="https://instagram.com/rrr_universe_"
-target="_blank">
-Join Community
-</a>
-
-</section>
-
+<!-- ABOUT -->
 <section id="about">
+<h2 class="glow-text">About Us</h2>
+<div class="card">
+We help beginners learn Forex, Crypto & Stock Market with simple strategies and daily updates.
+</div>
+</section>
 
-<h2>About Us</h2>
+<!-- FEATURES -->
+<section id="features">
+<h2 class="glow-text">Why Join Us</h2>
+<div class="card">📊 Daily Market Analysis</div>
+<div class="card">🧠 Beginner Friendly Learning</div>
+<div class="card">🚀 Trading Signals & Updates</div>
+<div class="card">💬 Private Community Access</div>
+</section>
 
-<div class="about">
+<!-- MARKET -->
+<section id="market">
+<h2 class="glow-text">Live Market</h2>
 
-<p>
-RRR Universe is a growing community created to connect new traders.
-Our goal is to help beginners learn trading, share knowledge,
-exchange ideas and build confidence together.
-</p>
-
+<div class="chart">
+<iframe 
+src="https://www.tradingview.com/embed-widget/advanced-chart/?symbol=NASDAQ:AAPL"
+width="100%" height="100%" frameborder="0">
+</iframe>
 </div>
 
 </section>
 
-<section id="mission">
-
-<h2>Our Mission</h2>
-
-<div class="cards">
-
+<!-- JOIN -->
+<section id="join">
+<h2 class="glow-text">Join Community</h2>
 <div class="card">
-<h3>Learn</h3>
-<p>Understand trading fundamentals and market psychology.</p>
+Instagram: @rrr_universe_<br><br>
+<button class="btn" onclick="join()">Join Now</button>
 </div>
-
-<div class="card">
-<h3>Connect</h3>
-<p>Meet like-minded traders and share experiences.</p>
-</div>
-
-<div class="card">
-<h3>Grow</h3>
-<p>Improve skills through continuous learning and discipline.</p>
-</div>
-
-</div>
-
 </section>
 
-<section id="contact">
-
-<h2>Join Our Community</h2>
-
-<div class="contact">
-
-<p>Instagram: @rrr_universe_</p>
-
-<br>
-
-<a class="btn"
-href="https://instagram.com/rrr_universe_"
-target="_blank">
-Follow on Instagram
-</a>
-
-</div>
-
-</section>
-
+<!-- FOOTER -->
 <footer>
-© 2026 RRR Universe | Trading Community
+© 2026 RRR Universe | All Rights Reserved
 </footer>
+
+<script>
+function join(){
+window.open("https://instagram.com/rrr_universe_","_blank");
+}
+</script>
 
 </body>
 </html>
