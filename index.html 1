@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RRR Universe</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#000000,#0f172a,#111827);
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.8);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#FFD700;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+color:#FFD700;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+font-size:18px;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#FFD700;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:30px;
+}
+
+section{
+padding:80px 10%;
+}
+
+h2{
+text-align:center;
+color:#FFD700;
+margin-bottom:30px;
+}
+
+.about{
+text-align:center;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:black;
+margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">RRR Universe</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#mission">Mission</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<h1>RRR Universe</h1>
+
+<p>
+Learn • Trade • Grow Together
+</p>
+
+<p style="margin-top:15px;">
+A community built for new traders who want to learn,
+connect, share ideas and grow together in the financial markets.
+</p>
+
+<a class="btn"
+href="https://instagram.com/rrr_universe_"
+target="_blank">
+Join Community
+</a>
+
+</section>
+
+<section id="about">
+
+<h2>About Us</h2>
+
+<div class="about">
+
+<p>
+RRR Universe is a growing community created to connect new traders.
+Our goal is to help beginners learn trading, share knowledge,
+exchange ideas and build confidence together.
+</p>
+
+</div>
+
+</section>
+
+<section id="mission">
+
+<h2>Our Mission</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Learn</h3>
+<p>Understand trading fundamentals and market psychology.</p>
+</div>
+
+<div class="card">
+<h3>Connect</h3>
+<p>Meet like-minded traders and share experiences.</p>
+</div>
+
+<div class="card">
+<h3>Grow</h3>
+<p>Improve skills through continuous learning and discipline.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Join Our Community</h2>
+
+<div class="contact">
+
+<p>Instagram: @rrr_universe_</p>
+
+<br>
+
+<a class="btn"
+href="https://instagram.com/rrr_universe_"
+target="_blank">
+Follow on Instagram
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 RRR Universe | Trading Community
+</footer>
+
+</body>
+</html>
